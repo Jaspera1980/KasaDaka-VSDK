@@ -95,6 +95,5 @@ ENV/
 uploads/*
 #vsdk/settings.py
 vsdk/static
-vsdk/uploads
 vsdk/staticfiles
 *.DS_Store
