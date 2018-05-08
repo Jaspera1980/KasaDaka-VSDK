@@ -1,0 +1,32 @@
+<html>
+    <p>Hi there!</p>
+    <p>It works!</p>
+    <p>Finally!</p>
+<div>
+    <p>{{ call_sessions }}</p>
+</div>
+
+{% for record in call_sessions %}
+    <div>
+        <p>Record from CallSession: {{ record }}</p>
+    </div>
+{% endfor %}
+
+
+{% for record in call_session_steps %}
+    <div>
+        <p>Record from CallSessionStep: {{ record }}</p>
+    </div>
+{% endfor %}
+
+<div>
+    <p>Query : {{ sql }}</p>
+</div>
+
+{% for record in sql %}
+    <div>
+        <p>Record from CallSessionStep: {{ record }}</p>
+    </div>
+{% endfor %}
+
+</html>
