@@ -168,6 +168,8 @@ class CallSessionAdmin(admin.ModelAdmin):
 class MessagePresentationAdmin(VoiceServiceElementAdmin):
     fieldsets = VoiceServiceElementAdmin.fieldsets + [(_('Message Presentation'), {'fields': ['_redirect','final_element']})]
 
+
+
 class KasaDakaUserAdmin(admin.ModelAdmin):
     list_filter = ['service','language','caller_id']
     list_display = ('__str__','caller_id', 'service', 'language')
@@ -187,7 +189,9 @@ class SpokenUserInputAdmin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(VoiceService, VoiceServiceAdmin)
+#
 admin.site.register(MessagePresentation, MessagePresentationAdmin)
+#
 admin.site.register(Choice, ChoiceAdmin)
 admin.site.register(CallSession, CallSessionAdmin)
 admin.site.register(KasaDakaUser, KasaDakaUserAdmin)
@@ -196,3 +200,4 @@ admin.site.register(VoiceLabel, VoiceLabelAdmin)
 admin.site.register(SpokenUserInput, SpokenUserInputAdmin)
 admin.site.register(UserInputCategory)
 admin.site.register(Record)
+admin.site.register(MessagePresentation2)
