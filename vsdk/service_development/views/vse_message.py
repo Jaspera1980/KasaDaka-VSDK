@@ -23,7 +23,14 @@ def message_presentation(request, element_id, session_id):
     message_presentation_element = get_object_or_404(MessagePresentation, pk=element_id)
     session = get_object_or_404(CallSession, pk=session_id)
     session.record_step(message_presentation_element)
+
+
     context = message_presentation_generate_context(message_presentation_element, session)
     
     return render(request, 'message_presentation.xml', context, content_type='text/xml')
+
+
+# def create_diagnosis_log(request, element_id, session_id):
+#     log = disease_diagnosis()
+#     if element_id == 2
 

@@ -53,3 +53,10 @@ class MessagePresentation2(VoiceServiceElement):
 
 
         return errors
+
+class disease_diagnosis(VoiceServiceElement):
+    call_date = models.DateTimeField('Call date')
+    disease = models.CharField(max_length=200, name='Diagnosed disease')
+
+    class Meta:
+        verbose_name = _('Disease diagnosi')
