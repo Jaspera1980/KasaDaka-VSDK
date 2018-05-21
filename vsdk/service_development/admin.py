@@ -146,10 +146,10 @@ class CallSessionInline(admin.TabularInline):
     max_num = 0
 
 class CallSessionAdmin(admin.ModelAdmin):
-    list_display = ('start','user','service','caller_id','language')
-    list_filter = ('service','user','caller_id')
-    fieldsets = [(_('General'), {'fields' : ['service', 'user','caller_id','start','end','language']})]
-    readonly_fields = ('service','user','caller_id','start','end','language') 
+    list_display = ('start','user','service','caller_id','language', 'disease')
+    list_filter = ('service','user','caller_id', 'disease')
+    fieldsets = [(_('General'), {'fields' : ['service', 'user','caller_id','start','end','language', 'disease']})]
+    readonly_fields = ('service','user','caller_id','start','end','language', 'disease')
     inlines = [CallSessionInline]
     can_delete = True
 
@@ -189,9 +189,7 @@ class SpokenUserInputAdmin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(VoiceService, VoiceServiceAdmin)
-#
 admin.site.register(MessagePresentation, MessagePresentationAdmin)
-#
 admin.site.register(Choice, ChoiceAdmin)
 admin.site.register(CallSession, CallSessionAdmin)
 admin.site.register(KasaDakaUser, KasaDakaUserAdmin)
@@ -200,5 +198,3 @@ admin.site.register(VoiceLabel, VoiceLabelAdmin)
 admin.site.register(SpokenUserInput, SpokenUserInputAdmin)
 admin.site.register(UserInputCategory)
 admin.site.register(Record)
-admin.site.register(MessagePresentation2)
-admin.site.register(disease_diagnosis)

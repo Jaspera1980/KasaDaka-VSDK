@@ -30,6 +30,8 @@ def message_presentation(request, element_id, session_id):
     return render(request, 'message_presentation.xml', context, content_type='text/xml')
 
 
+
+
 # def create_diagnosis_log(request, element_id, session_id):
 #     log = disease_diagnosis()
 #     if element_id == 2

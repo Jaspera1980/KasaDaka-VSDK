@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.call_session, name='call_session'),
+#    path('', views.chart, name='chart'),
 ]

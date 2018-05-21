@@ -57,6 +57,12 @@ class MessagePresentation2(VoiceServiceElement):
 class disease_diagnosis(VoiceServiceElement):
     call_date = models.DateTimeField('Call date')
     disease = models.CharField(max_length=200, name='Diagnosed disease')
+    # def disease2database:
+    #     if self._redirect.id == 16:
+
+
+    #def save_disease(self):
+
 
     class Meta:
         verbose_name = _('Disease diagnosi')

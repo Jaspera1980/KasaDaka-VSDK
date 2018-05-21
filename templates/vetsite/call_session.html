@@ -1,4 +1,12 @@
 <html>
+    <img src="/home/benny/Documents/Github/KasaDaka-VSDK/disease_graph.jpg" ALT="some text" WIDTH=640 HEIGHT=480>
+    <img src="../../../disease_graph.jpg" ALT="some text" WIDTH=640 HEIGHT=480>
+    <img src="/disease_graph.jpg" />
+    <img src="disease_graph.png" WIDTH=640 HEIGHT=480 >
+    <img src="http://www.natuurinformatie.nl/sites/nnm.dossiers/contents/i001540/5094_07-01.jpg" ALT="some text" WIDTH=640 HEIGHT=480>
+    {% load staticfiles %}
+    <img src="{% static "disease_graph.jpg" WIDTH=640 HEIGHT=480 %}" alt="My image"/>
+        Welcome to my site
     <p>Hi there!</p>
     <p>It works!</p>
     <p>Finally!</p>
@@ -28,5 +36,8 @@
         <p>Record from CallSessionStep: {{ record }}</p>
     </div>
 {% endfor %}
+
+
+
 
 </html>
