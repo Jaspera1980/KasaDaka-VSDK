@@ -56,3 +56,4 @@ watchdog==0.8.3
 whitenoise==3.3.0
 sqlalchemy==1.2.7
 pandas==0.23.0
+matplotlib==2.2.2
