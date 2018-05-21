@@ -50,7 +50,7 @@ def make_plot():
     # Make square figures and axes
     plt.pie(fracs, labels=labels, autopct='%1.1f%%', shadow=True)
     plt.title('Disease Occurances')
-    plt.savefig('disease_graph.jpg')
+    plt.savefig('disease_graph.png')
     plt.show()
     return 
     
