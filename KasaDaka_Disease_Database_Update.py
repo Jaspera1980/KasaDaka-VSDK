@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[2]:
-
-
 import sqlalchemy
 
 #Database details
@@ -15,18 +9,10 @@ port=5432
 
 #Function: Connection and Metadata
 def connect(user, password, db, host, port):
-    '''Returns a connection and a metadata object'''
-    # We connect with the help of the PostgreSQL URL
-    # postgresql://federer:grandestslam@localhost:5432/tennis
     url = 'postgresql://{}:{}@{}:{}/{}'
     url = url.format(user, password, host, port, db)
-
-    # The return value of create_engine() is our connection object
     con = sqlalchemy.create_engine(url, client_encoding='utf8')
-
-    # We then bind the connection to MetaData()
     meta = sqlalchemy.MetaData(bind=con, reflect=True)
-
     return con, meta
 
 #Connect to database
