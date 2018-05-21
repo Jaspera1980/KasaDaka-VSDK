@@ -18,6 +18,7 @@ class CallSession(models.Model):
     service = models.ForeignKey(VoiceService, on_delete = models.SET_NULL, null = True)
     _language = models.ForeignKey(Language,on_delete = models.SET_NULL, null = True)
     disease = models.CharField(_('Diagnosed disease'), max_length=20, blank = True, null = True)
+    veterinarian = models.CharField(_('Choosen veterinarian'), max_length=20, blank = True, null = True)
     class Meta:
         verbose_name = _('Call Session')
 

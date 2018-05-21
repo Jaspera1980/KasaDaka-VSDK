@@ -1,3 +1,9 @@
+
+# coding: utf-8
+
+# In[9]:
+
+
 import sqlalchemy
 
 #Database details
@@ -9,10 +15,18 @@ port=5432
 
 #Function: Connection and Metadata
 def connect(user, password, db, host, port):
+    '''Returns a connection and a metadata object'''
+    # We connect with the help of the PostgreSQL URL
+    # postgresql://federer:grandestslam@localhost:5432/tennis
     url = 'postgresql://{}:{}@{}:{}/{}'
     url = url.format(user, password, host, port, db)
+
+    # The return value of create_engine() is our connection object
     con = sqlalchemy.create_engine(url, client_encoding='utf8')
+
+    # We then bind the connection to MetaData()
     meta = sqlalchemy.MetaData(bind=con, reflect=True)
+
     return con, meta
 
 #Connect to database
@@ -52,6 +66,29 @@ for item in q1:
             count = 0
             disease = "'No diagnosis' "
     query_stmt = "UPDATE service_development_callsession SET disease = " + disease + "WHERE id = " + matching_id
+    q2 = con.execute(query_stmt)
+
+count = 0
+for item in q1:
+    #Count number of same id's
+    no_of_ids = count_list.count(item[1])
+    #Match on session_id
+    matching_id = str(item[1])
+    #PK number with matching diagnosis
+    vet_dict = {25:"Veterinarian 1", 26:"Veterinarian 2", 27:"Veterinarian 3"}
+    #If pk=x then state the diagnosis
+    if item[0] in vet_dict.keys():
+        vet = str("'" + vet_dict[item[0]] + "'" + " ")
+    #If no diagnosis is found return 'No diagnosis'
+    else:
+        count += 1
+        if count != no_of_ids:
+            print("No of iterations:",count)
+            continue
+        else:
+            count = 0
+            vet = "'No choice' "
+    query_stmt = "UPDATE service_development_callsession SET veterinarian = " + vet + "WHERE id = " + matching_id
     q2 = con.execute(query_stmt)
 
 #close connection
