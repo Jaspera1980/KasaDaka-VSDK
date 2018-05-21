@@ -146,10 +146,10 @@ class CallSessionInline(admin.TabularInline):
     max_num = 0
 
 class CallSessionAdmin(admin.ModelAdmin):
-    list_display = ('start','user','service','caller_id','language', 'disease', 'veterinarian')
+    list_display = ('start','user','service','caller_id', 'disease', 'veterinarian')
     list_filter = ('service','user','caller_id', 'disease', 'veterinarian')
-    fieldsets = [(_('General'), {'fields' : ['service', 'user','caller_id','start','end','language', 'disease', 'veterinarian']})]
-    readonly_fields = ('service','user','caller_id','start','end','language', 'disease', 'veterinarian')
+    fieldsets = [(_('General'), {'fields' : ['service', 'user','caller_id','start','end', 'disease', 'veterinarian']})]
+    readonly_fields = ('service','user','caller_id','start','end', 'disease', 'veterinarian')
     inlines = [CallSessionInline]
     can_delete = True
 
