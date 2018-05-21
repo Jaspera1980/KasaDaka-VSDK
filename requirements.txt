@@ -54,3 +54,5 @@ tornado==4.5.2
 urllib3==1.22
 watchdog==0.8.3
 whitenoise==3.3.0
+sqlalchemy==1.2.7
+pandas==0.23.0
