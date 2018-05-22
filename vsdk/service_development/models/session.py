@@ -20,7 +20,7 @@ class CallSession(models.Model):
     disease = models.CharField(_('Diagnosed disease'), max_length=20, blank = True, null = True)
     veterinarian = models.CharField(_('Choosen veterinarian'), max_length=20, blank = True, null = True)
     class Meta:
-        verbose_name = _('Call Session')
+        verbose_name = _('PoultryVet Database')
 
     def __str__(self):
         from django.template import defaultfilters
