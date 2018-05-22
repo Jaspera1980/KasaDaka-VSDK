@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[9]:
-
-
 import sqlalchemy
 
 #Database details
@@ -95,3 +89,4 @@ for item in q1:
 q0.close()
 q2.close()
 
+print("database updated")
