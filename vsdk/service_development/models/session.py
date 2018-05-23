@@ -19,6 +19,9 @@ class CallSession(models.Model):
     _language = models.ForeignKey(Language,on_delete = models.SET_NULL, null = True)
     disease = models.CharField(_('Diagnosed disease'), max_length=20, blank = True, null = True)
     veterinarian = models.CharField(_('Choosen veterinarian'), max_length=20, blank = True, null = True)
+    medicines = models.CharField(_('Available Medicines'), max_length=20, blank = True, null = True)
+    vaccines = models.CharField(_('Available Vaccines'), max_length=20, blank = True, null = True)
+
     class Meta:
         verbose_name = _('PoultryVet Database')
 

@@ -7,4 +7,6 @@ from .vse_choice import *
 from .vse_message import *
 from .vse_record import *
 from .user_input import *
-
+##own models
+from .disease_information import *
+from .KasaDaka_Disease_Database_Update import *
