@@ -5,7 +5,8 @@ from collections import Counter
 
 class update_datebase():
     """Update disease diagnosis in database"""
-    con = sqlalchemy.create_engine('postgresql://postgres:123@abc@127.0.0.1:5432/KasaDaka')
+    #con = sqlalchemy.create_engine('postgresql://postgres:123@abc@127.0.0.1:5432/KasaDaka')
+    con = sqlalchemy.create_engine('postgres://ewtrfteewaclcb:063d9109aa5aa80ed752d6c32e47969888c47a02960389e0d82ba8d3b75924df@ec2-54-246-84-200.eu-west-1.compute.amazonaws.com:5432/d97ho3108oceof')
     # Select items from service_development_callsessionstep
     q0 = con.execute("SELECT _visited_element_id, session_id FROM service_development_callsessionstep")
     q1 = q0.fetchall()
