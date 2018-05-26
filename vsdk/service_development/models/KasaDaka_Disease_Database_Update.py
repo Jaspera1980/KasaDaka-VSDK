@@ -1,6 +1,7 @@
 import sqlalchemy
 from collections import Counter
 
+#Script to update the database
 
 class update_datebase():
     """Update disease diagnosis in database"""
