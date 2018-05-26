@@ -146,18 +146,18 @@ class CallSessionInline(admin.TabularInline):
     max_num = 0
 
 class CallSessionAdmin(admin.ModelAdmin):
-    list_display = ('start','service','caller_id')#, 'disease', 'veterinarian', 'medicines', 'vaccines')
-    list_filter = ('service','caller_id')#, 'disease', 'veterinarian', 'medicines', 'vaccines')
-    fieldsets = [(_('General'), {'fields' : ['service', 'caller_id','start','end']})]#, 'disease', 'veterinarian', 'medicines', 'vaccines']})]
-    readonly_fields = ('service','caller_id','start','end')#, 'disease', 'veterinarian', 'medicines', 'vaccines')
+    list_display = ('start','service','caller_id', 'disease', 'veterinarian', 'medicines', 'vaccines')
+    list_filter = ('service','caller_id', 'disease', 'veterinarian', 'medicines', 'vaccines')
+    fieldsets = [(_('General'), {'fields' : ['service', 'caller_id','start','end', 'disease', 'veterinarian', 'medicines', 'vaccines']})]
+    readonly_fields = ('service','caller_id','start','end', 'disease', 'veterinarian', 'medicines', 'vaccines')
     inlines = [CallSessionInline]
     can_delete = True
 
     #update database
-    # update_datebase().update_disease()
-    # update_datebase().update_vet()
-    # update_datebase().update_medicine()
-    # update_datebase().update_vaccine()
+    update_datebase().update_disease()
+    update_datebase().update_vet()
+    update_datebase().update_medicine()
+    update_datebase().update_vaccine()
 
     def has_add_permission(self, request):
         return False
