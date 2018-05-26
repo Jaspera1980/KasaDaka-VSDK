@@ -17,10 +17,10 @@ class CallSession(models.Model):
     caller_id = models.CharField(_('Caller ID'),max_length = 100, blank = True, null = True)
     service = models.ForeignKey(VoiceService, on_delete = models.SET_NULL, null = True)
     _language = models.ForeignKey(Language,on_delete = models.SET_NULL, null = True)
-    disease = models.CharField(_('Diagnosed disease'), max_length=20, blank = True, null = True)
-    veterinarian = models.CharField(_('Choosen veterinarian'), max_length=20, blank = True, null = True)
-    medicines = models.CharField(_('Available Medicines'), max_length=20, blank = True, null = True)
-    vaccines = models.CharField(_('Available Vaccines'), max_length=20, blank = True, null = True)
+    disease = models.CharField(_('Diagnosed disease'), max_length=200, default='Not available')
+    veterinarian = models.CharField(_('Choosen veterinarian'), max_length=200, default='Not available')
+    medicines = models.CharField(_('Available Medicines'), max_length=200, default='Not available')
+    vaccines = models.CharField(_('Available Vaccines'), max_length=200, default='Not available')
 
     class Meta:
         verbose_name = _('PoultryVet Database')
